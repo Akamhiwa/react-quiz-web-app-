@@ -1,6 +1,7 @@
-import React from 'react'
+import {  useQuiz } from './PostContext';
+const NextButton = () => {
+    const {Question,index,setIndex,setStatus,answer,setAnswer}=useQuiz()
 
-const NextButton = ({index,setIndex,setAnswer,answer,Question,setStatus}) => {
  return(
     <>
         {index===Question.length-1 &&(

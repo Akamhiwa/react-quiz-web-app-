@@ -1,6 +1,6 @@
-import React from 'react';
-
-const StartScreen = ({Question,setStatus}) => {
+import { useQuiz } from './PostContext';
+const StartScreen = () => {
+  const {Question,setStatus}=useQuiz()
     const numQuestions=Question.length;
   return (
     <div className='flex items-center justify-center flex-col gap-12 text-white md:mt-[40px] mt-[30px]'>

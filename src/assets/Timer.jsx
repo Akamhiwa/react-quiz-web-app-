@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useEffect, useState } from 'react'
+import { useQuiz } from './PostContext';
+const Timer = () => {
+  const {Question,setStatus}=useQuiz()
 
-const Timer = ({Question,setStatus}) => {
   const [secondsRemaining,setSecondsRemaining]=useState(Question.length * 30)
   const min = Math.floor(secondsRemaining / 60);
   const seconds = secondsRemaining % 60;

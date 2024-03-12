@@ -1,6 +1,7 @@
-import React from 'react'
+import {  useQuiz } from './PostContext';
+const Questions = () => {
+  const {Question,index,setAnswer,answer,setScore}=useQuiz()
 
-const Questions = ({Question,index,answer,setAnswer,setScore}) => {
   const hasAnswered=answer!==null
   return (
     <div className='flex flex-col gap-8  '>
@@ -8,7 +9,7 @@ const Questions = ({Question,index,answer,setAnswer,setScore}) => {
       <div className='flex flex-col gap-4'>
         {Question[index].options.map((option,i)=>(
           <button
-          className={`w-full h-12   px-7 rounded-full transition-translate duration-200
+          className={`w-full h-12 text-lg md:text-xl flex items-center font-primary  px-7 rounded-full transition-translate duration-200
           ${i===answer ? "translate-x-4 ":""} 
           ${hasAnswered ? i===Question[index].correctOption ? "bg-[#1098ad]":"bg-[#ffa94d] text-black" :""}
          ${hasAnswered ?" cursor-not-allowed":" hover:bg-transparent hover:border-2 hover:border-slate-400 hover:translate-x-4 bg-[#A69C9C] bg-opacity-20"}`}
@@ -20,7 +21,7 @@ const Questions = ({Question,index,answer,setAnswer,setScore}) => {
           }
           }} 
            disabled={hasAnswered}>
-           <h1 className={` text-base md:text-xl h-full flex  items-center font-primary`}> {option}</h1> 
+            {option}
           </button>
         ))}
 

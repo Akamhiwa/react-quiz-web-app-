@@ -1,6 +1,7 @@
-import React from 'react'
+import {  useQuiz } from './PostContext';
+const FinishScreen = () => {
+  const {score,setStatus,setIndex,setScore,setAnswer,maxPossiblePoints}=useQuiz()
 
-const FinishScreen = ({score,setStatus,setScore,setIndex,setAnswer,maxPossiblePoints}) => {
   const percentage = (score / maxPossiblePoints) * 100;
   let emoji;
   if (percentage === 100) emoji = "🥇";
