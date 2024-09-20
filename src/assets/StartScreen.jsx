@@ -1,4 +1,4 @@
-import { useQuiz } from './PostContext';
+import { useQuiz } from './QuizContext';
 const StartScreen = () => {
   const {Question,setStatus}=useQuiz()
     const numQuestions=Question.length;

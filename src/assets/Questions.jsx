@@ -1,4 +1,4 @@
-import {  useQuiz } from './PostContext';
+import {  useQuiz } from './QuizContext';
 const Questions = () => {
   const {Question,index,setAnswer,answer,setScore}=useQuiz()
 

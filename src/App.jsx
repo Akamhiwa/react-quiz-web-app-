@@ -1,13 +1,10 @@
-import React from 'react'
-import {  PostContext } from './assets/PostContext'
+import {  QuizContext } from './assets/QuizContext'
 import QuizApp from './assets/QuizApp'
 const App = () => {
- 
- 
   return (
-    <PostContext>
+    <QuizContext>
      <QuizApp />
-    </PostContext>
+    </QuizContext>
   )
 }
 

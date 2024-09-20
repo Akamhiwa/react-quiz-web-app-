@@ -1,4 +1,4 @@
-import {  useQuiz } from './PostContext';
+import {  useQuiz } from './QuizContext';
 const NextButton = () => {
     const {Question,index,setIndex,setStatus,answer,setAnswer}=useQuiz()
 

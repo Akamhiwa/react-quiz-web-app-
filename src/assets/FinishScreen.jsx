@@ -1,4 +1,4 @@
-import {  useQuiz } from './PostContext';
+import {  useQuiz } from './QuizContext';
 const FinishScreen = () => {
   const {score,setStatus,setIndex,setScore,setAnswer,maxPossiblePoints}=useQuiz()
 

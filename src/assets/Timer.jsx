@@ -1,5 +1,5 @@
 import React, {  useEffect, useState } from 'react'
-import { useQuiz } from './PostContext';
+import { useQuiz } from './QuizContext';
 const Timer = () => {
   const {Question,setStatus}=useQuiz()
 

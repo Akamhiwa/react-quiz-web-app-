@@ -11,10 +11,12 @@
     "server": "json-server --watch data/questions.json --port 9000"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.45.4",
     "framer-motion": "^11.0.6",
     "json-server": "^1.0.0-alpha.23",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "supabase": "^1.192.5"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",

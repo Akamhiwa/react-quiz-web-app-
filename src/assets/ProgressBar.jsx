@@ -1,4 +1,4 @@
-import {  useQuiz } from './PostContext'
+import {  useQuiz } from './QuizContext'
 const ProgressBar = () => {
   const {Question,index,score,answer,maxPossiblePoints}=useQuiz()
   return (

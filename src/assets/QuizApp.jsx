@@ -1,4 +1,3 @@
-import React  from 'react'
 import Loading from '../assets/Loading'
 import Error from '../assets/Error'
 import Header from '../assets/Header'
@@ -8,7 +7,7 @@ import ProgressBar from '../assets/ProgressBar'
 import NextButton from '../assets/NextButton'
 import Questions from '../assets/Questions'
 import FinishScreen from "../assets/FinishScreen"
-import {  useQuiz } from '../assets/PostContext'
+import {  useQuiz } from './QuizContext'
 const QuizApp = () => {
     const {status}=useQuiz();
    
@@ -16,7 +15,6 @@ const QuizApp = () => {
     <div className='md:px-[10%] lg:px-[20%] xl:px-[30%] p-4 '>
     <div >
     <Header />
-   
     {status==="loading" && (<Loading />)}
     { status==="error"&& (<Error />)} 
     {status ==="ready" && (<StartScreen />)}

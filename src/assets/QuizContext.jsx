@@ -1,7 +1,11 @@
+//  eslint-disable react-refresh/only-export-components 
+//   eslint-disable-next-line no-unused-vars
 import React, {useEffect, useState,createContext, useContext } from 'react'
+import supabase from '../services/supabase'
  const Context=createContext()
-const PostContext = ({children}) => {
-   
+ 
+// eslint-disable-next-line react/prop-types
+const QuizContext = ({children}) => {
     const [Question,setQuestion]=useState([])
     const [status,setStatus]=useState("loading")
     const [index,setIndex]=useState(0)
@@ -11,20 +15,29 @@ const PostContext = ({children}) => {
       (prev, cur) => prev + cur.points,
       0
     );
+    
+  
+
     useEffect(()=>{
-      const FetchAPi=async()=>{
+      const fetchQuestions=async()=>{
         try {
-         
-          const resp=await fetch("http://localhost:9000/questions")
-          const data=await resp.json()
-          setQuestion(data)
-          setStatus("ready")
+          const { data, error } = await supabase
+            .from('questions')  
+            .select('*');       
+          console.log(data);
+          
+          if (error) throw error;
+  
+          setQuestion(data);  
+          setStatus('ready');  
         } catch (error) {
-          setStatus("error")
+          console.error('Error fetching questions:', error);
+          setStatus('error');  
         }
       }
-      FetchAPi()
-    },[setQuestion,setStatus])
+      fetchQuestions()
+    },[])
+    
     
   return (
     <Context.Provider 
@@ -49,4 +62,7 @@ const useQuiz=()=>{
     return useContext(Context)
 }
 
-export {useQuiz,PostContext}
+// eslint-disable-next-line react-refresh/only-export-components
+export {useQuiz,QuizContext}
+
+// eslint-disable-next-line no-unused-vars
